@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body >
-  <div class="container">
+<body ng-controller="AppCtrl">
+  <div class="container-fluid">
     <div class="navbar">
       <div class="navbar-inner">
         <a class="brand" href="#/">Dabbble</a>
@@ -17,7 +17,7 @@
     </div>
     <h1>Hello {{name}}</h1>
     <input type="text" ng-model="name">
-
+    <button class="btn" ng-click="updateName()">Update</button>
   </div>
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
