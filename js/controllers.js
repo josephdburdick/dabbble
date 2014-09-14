@@ -13,6 +13,14 @@ controllers.controller('ShotsListCtrl', function ($scope, dribbble, $routeParams
 		$scope.list = data.data;
 		console.log(data);
 	});
+
+	$scope.loadNextPage = function(){
+		dribbble.list(list, {page: ($scope.list.page + 1}).then(function (data){
+			console.log(data)
+			$scope.list.page = data.data.page;
+			$scope.list.shots = $scope.list.shots.concat(data.data.shots);
+		});
+	}
 });
 
 controllers.controller('ShotsCtrl', function ($routeParams, $scope, dribbble){ 
