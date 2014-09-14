@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('dabbble', ['dabbble.controllers']);
+var app = angular.module('dabbble', ['dabbble.controllers', 'dabbble.filters']);
 
 app.config(function($routeProvider){
 	$routeProvider
