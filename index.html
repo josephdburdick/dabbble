@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="dabbble">
 <head>
   <meta charset="utf-8">
   <title>Dabbble</title>
@@ -15,9 +15,14 @@
         </ul>
       </div>
     </div>
-    <h1>Hello {{name}}</h1>
-    <input type="text" ng-model="name">
-    <button class="btn" ng-click="updateName()">Update</button>
+    <div ng-controller="ShotsListCtrl">
+      <ul class="thumbnails">
+        <li class="thumbnail" ng-repeat="shot in list.shots">
+          {{shot.title}}
+          <img ng-src="{{ shot.image_url }}">
+        </li>
+      </ul>
+    </div>
   </div>
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>

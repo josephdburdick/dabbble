@@ -1,9 +1,3 @@
 "use strict";
 
-
-function AppCtrl($scope){
-	$scope.name = "World!"
-	$scope.updateName = function(){
-		$scope.name = "World from function"
-	}
-}
+var app = angular.module('dabbble', ['dabbble.controllers']);
