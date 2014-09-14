@@ -15,6 +15,11 @@ controllers.controller('ShotsListCtrl', function ($scope, $routeParams, $http){
 	});
 });
 
-controllers.controller('ShotsCtrl', function ($scope, $http){
-	
+controllers.controller('ShotsCtrl', function ($routeParams, $scope, $http){ 
+	// order of arguments don't matter;       ^ it looks them up by name ^ 
+	var id = $routeParams.id;
+	$http.jsonp('http://api.dribbble.com/shots/' + id + '?callback=JSON_CALLBACK').then(function(data){
+		$scope.shot = data.data;
+		console.log(data);
+	});
 });
